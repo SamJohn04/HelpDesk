@@ -19,6 +19,18 @@ public class Request {
     generateId();
    }
 
+   public Request(String randId, String userName, String userRollNum, String userBranch, String userSem, String requestTitle, String requestDescription, String userEmail, int userBatch) {
+      this.randId = randId;
+      this.userName = userName;
+      this.userRollNum = userRollNum;
+      this.userBranch = userBranch;
+      this.userSem = userSem;
+      this.requestTitle = requestTitle;
+      this.requestDescription = requestDescription;
+      this.userBatch = userBatch;
+      this.userEmail = userEmail;
+     }
+
    private void generateId() {
       String[] randIds = new String[1000];
       int n = HelpDeskController.helpDeskController.getIDList(randIds);

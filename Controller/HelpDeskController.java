@@ -9,7 +9,7 @@ public class HelpDeskController {
     Statement st;
     public HelpDeskController() {
         try {
-            con = DriverManager.getConnection(/*TODO*/);
+            con = DriverManager.getConnection(/*TODO */);
             st = con.createStatement();
         }
         catch(Exception e) {
@@ -20,7 +20,7 @@ public class HelpDeskController {
         try{
             ResultSet rs = st.executeQuery("SELECT * FROM REQUESTS WHERE randId = "+id);
             rs.next();
-            return new Request(rs.getString("userName"), rs.getString("userRollNum"), rs.getString("userBranch"), rs.getString("userSem"), rs.getString("requestTitle"), rs.getString("requestDescription"), rs.getString("email"), rs.getInt("userBatch"));
+            return new Request(id, rs.getString("userName"), rs.getString("userRollNum"), rs.getString("userBranch"), rs.getString("userSem"), rs.getString("requestTitle"), rs.getString("requestDescription"), rs.getString("email"), rs.getInt("userBatch"));
         }
         catch(Exception e) {
             System.out.println(e);
